@@ -36,7 +36,7 @@ namespace Task7._7
         {
             IEnumerable<Soldier> transferredSoldiers = _firstSquadOfSoldiers.Where(soldier => soldier.SurName.StartsWith("Б"));
             _secondSquadOfSoldiers = _secondSquadOfSoldiers.Union(transferredSoldiers).ToList();
-            _firstSquadOfSoldiers.RemoveAll(soldierInFirstSquad => _secondSquadOfSoldiers.Any(soldierInSecondSquad => soldierInFirstSquad.SurName == soldierInSecondSquad.SurName));
+            _firstSquadOfSoldiers = _firstSquadOfSoldiers.Except(transferredSoldiers).ToList();
         }
 
         private void ShowAllSquads()
@@ -77,14 +77,14 @@ namespace Task7._7
             List<string> surNamesOfsoldiers = new List<string>
             {
             "Богомолов",
-            "Богданов",
+            "Соколов",
             "Виноградов",
             "Мухин",
             "Зубов",
             "Мельников",
             "Александров",
             "Федорова",
-            "Соколов",
+            "Богданов",
             "Кочетков",
             "Куликова",
             "Фролова",
