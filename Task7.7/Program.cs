@@ -113,6 +113,7 @@ namespace Task7._7
             return rank;
         }
     }
+    
     class Soldier
     {
         private string _rank;
